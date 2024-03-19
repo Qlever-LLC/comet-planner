@@ -70,9 +70,6 @@ for (const key in AL) {
     index.addToIndex(<CometRecord>AL[key]);
 }
 
-let _value = index.search("Autauga", "Cropland Management");
-console.log(`--> value ${_value[0].state} -- ${_value[0].county} -- ${_value[0].class}`);
-
 /**
  * Creates an Index per State, then it returns a set of records
  * for the search State, County, and Class
@@ -82,7 +79,8 @@ console.log(`--> value ${_value[0].state} -- ${_value[0].county} -- ${_value[0].
  * @returns 
  */
 export function getCometRecords(state: string, county: string, class1: string): CometRecord[] {
-    return [];
+    let _records = index.search(county, class1);
+    return _records;
 }
 
 /**
