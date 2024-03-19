@@ -2,6 +2,7 @@
 import * as xlsx from 'xlsx';
 import * as path from 'path';
 import * as AL from '../data/AL.json'; // test for state
+import axios from 'axios';
 
 // an interface for the CometRecord
 interface CometRecord {
@@ -43,6 +44,31 @@ interface CometRecord {
     total_ghg_co2_max: number;
 }// Interface
 
+class DataRepository {
+    private readonly baseUrl: string;
+
+    constructor(baseUrl: string) {
+        this.baseUrl = baseUrl;
+    }
+
+    async queryData(state: string, county: string, class1: string): Promise<CometRecord[]> {
+        const _url = `${this.baseUrl}/${state}.json`;
+        //console.log(`--> URL: ${_url}`);
+
+        try {
+            const response = await axios.get(_url);
+            // Filter the data based on county and class1
+            const data = response.data.filter((item: any) => item.county === county && item.class === class1);
+            return data;
+        } catch (error) {
+            //console.error('Error querying data:', error);
+            return []; // Return empty array in case of error
+        }
+    }
+}//DataRepository
+
+// Example usage:
+const repository = new DataRepository('https://raw.githubusercontent.com/Qlever-LLC/comet-planner/main/datasource');
 class InMemoryIndex {
     private index: { [key: string]: CometRecord[] };
 
@@ -78,9 +104,8 @@ for (const key in AL) {
  * @param class1 
  * @returns 
  */
-export function getCometRecords(state: string, county: string, class1: string): CometRecord[] {
-    let _records = index.search(county, class1);
-    return _records;
+export async function getCometRecords(state: string, county: string, class1: string): Promise<CometRecord[]> {
+    return await repository.queryData(state, county, class1);
 }
 
 /**
@@ -89,7 +114,7 @@ export function getCometRecords(state: string, county: string, class1: string): 
  * @returns 
  */
 export function readExcelData(filePath: string): Record<string, any>[] {
-    const _datum = { name: "servio", lastName: "palacios" };
+    const _datum = { name: "name", lastName: "lastname" };
     let _data: Record<string, any>[] = [];
     _data.push(_datum);
     return _data;
