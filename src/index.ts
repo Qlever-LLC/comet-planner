@@ -1,7 +1,4 @@
 // src/index.ts
-import * as xlsx from 'xlsx';
-import * as path from 'path';
-import * as AL from '../data/AL.json'; // test for state
 import axios from 'axios';
 
 // an interface for the CometRecord
@@ -53,7 +50,6 @@ class DataRepository {
 
     async queryData(state: string, county: string, class1: string): Promise<CometRecord[]> {
         const _url = `${this.baseUrl}/${state}.json`;
-        //console.log(`--> URL: ${_url}`);
 
         try {
             const response = await axios.get(_url);
@@ -68,6 +64,7 @@ class DataRepository {
 }//DataRepository
 
 // Example usage:
+// The Path can be configured. add a tool to config this parameter or add a yaml file
 const repository = new DataRepository('https://raw.githubusercontent.com/Qlever-LLC/comet-planner/main/datasource');
 class InMemoryIndex {
     private index: { [key: string]: CometRecord[] };
@@ -90,11 +87,11 @@ class InMemoryIndex {
     }
 }//InMemoryIndex
 
-const index = new InMemoryIndex();
+// const index = new InMemoryIndex();
 
-for (const key in AL) {
-    index.addToIndex(<CometRecord>AL[key]);
-}
+// for (const key in AL) {
+//     index.addToIndex(<CometRecord>AL[key]);
+// }
 
 /**
  * Creates an Index per State, then it returns a set of records
