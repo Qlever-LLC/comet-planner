@@ -1,0 +1,23 @@
+{
+    "name": "comet-planner",
+    "version": "0.0.1",
+    "description": "A Comet planner library.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "start": "ts-node src/index.ts",
+        "test": "jest"
+    },
+    "author": "The Qlever Company, LLC",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.28",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.1.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.4.2",
+        "xlsx": "^0.18.5"
+    }
+}

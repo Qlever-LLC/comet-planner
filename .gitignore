@@ -1,0 +1,41 @@
+# Use yarn not npm
+package.lock
+
+# data folder
+data
+data.xlsx
+
+# Mac nonsense
+.DS_Store
+
+# vscode stuff
+.dccache
+.history
+
+# vim/nvim stuff
+.nvimlog
+
+# Build output
+dist
+.test
+
+# Docker overrides
+docker-compose.override.yml
+
+# Ignore act stuff
+.actrc
+act/
+
+# ignore sdk stuff
+.vim
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+node_modules/
