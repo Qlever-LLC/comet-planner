@@ -1,9 +1,9 @@
 // src/index.ts
 import * as xlsx from 'xlsx';
 import * as path from 'path';
-import * as AL from '../data/AL.json';
+import * as AL from '../data/AL.json'; // test for state
 
-// b5a56c7cfa997c48302a04322d7f4a701794a9b8
+// an interface for the CometRecord
 interface CometRecord {
     state: string;
     county: string;
@@ -91,31 +91,9 @@ export function getCometRecords(state: string, county: string, class1: string): 
  * @returns 
  */
 export function readExcelData(filePath: string): Record<string, any>[] {
-    const workbook = xlsx.readFile(path.resolve(__dirname, "data.xlsx"));
-    const sheetName = workbook.SheetNames[1];
-    // console.log(`--> sheetname ${sheetName}`);
-    // console.log(workbook.SheetNames);
-    //console.log(workbook.Sheets);
-    const worksheet = workbook.Sheets[sheetName];
-    // if (!worksheet) {
-    //     // Handle the case where the sheet doesn't exist
-    //     console.error(`Sheet '${sheetName}' not found in workbook.`);
-    //     return [];
-    // }
-
-    // for (const key in workbook.Sheets) {
-    //     if (key !== "metadata" && key !== "column_descriptions") {
-    //         console.log(key); // Print each key
-    //         console.log(worksheet)
-    //     }
-    // }
-
     const _datum = { name: "servio", lastName: "palacios" };
     let _data: Record<string, any>[] = [];
     _data.push(_datum);
-
-    //const data: Record<string, any>[] = xlsx.utils.sheet_to_json(worksheet);
-    //const data: Record<string, any>[] = _data;
     return _data;
 }
 

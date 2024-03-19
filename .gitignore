@@ -1,5 +1,6 @@
 # Use yarn not npm
 package.lock
+yarn.lock
 
 # data folder
 data
