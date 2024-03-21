@@ -36,3 +36,11 @@ const result = await planner.getCometRecords("AL", "Autauga", "Cropland Manageme
 ```
 
 ## Dataset
+
+The library utilizes The Comet Planner dataset. The following represents a brief analysis of the data.
+
+### Total Records per State
+
+<img height="75" src="https://raw.githubusercontent.com/Qlever-LLC/comet-planner/main/images/total_records_per_state.png" align="middle">
+
+### Total Counties per State
