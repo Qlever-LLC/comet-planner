@@ -9,7 +9,7 @@ This library is based on the work of [comet-planner.com](http://comet-planner.co
 
 The Comet Planner library provides access to datasets supplied in different JSON files, with each file containing data for a specific state. The library allows users to retrieve the specific file needed and filter out information based on parameters such as county, class, and practice implementation.
 
-Features
+#### Features
 
 * State-specific Datasets: Data for each state is stored in separate JSON files, making it easy to access and manage state-specific information.
 * Flexible Filtering: Users can filter the dataset based on various parameters such as county, class, and practice implementation to retrieve relevant information.
