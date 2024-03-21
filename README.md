@@ -41,6 +41,8 @@ The library utilizes The Comet Planner dataset. The following represents a brief
 
 ### Total Records per State
 
-<img height="75" src="https://raw.githubusercontent.com/Qlever-LLC/comet-planner/main/images/total_records_per_state.png" align="middle">
+<img src="https://raw.githubusercontent.com/Qlever-LLC/comet-planner/main/images/total_records_per_state.png" align="middle">
 
 ### Total Counties per State
+
+<img src="https://raw.githubusercontent.com/Qlever-LLC/comet-planner/main/images/counties_per_state.png" align="middle">
