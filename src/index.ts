@@ -41,6 +41,11 @@ interface CometRecord {
     total_ghg_co2_max: number;
 }// Interface
 
+
+// Check for States, Validate those values
+// Check for No Data stuff, perhaps undefined
+// Include More Test Cases
+// Validate the dataset so that there is no unexpected characters in there
 class DataRepository {
     private readonly baseUrl: string;
 
