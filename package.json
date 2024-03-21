@@ -1,6 +1,6 @@
 {
     "name": "comet-planner",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A Comet planner library.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
